@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+import { TriviaModel } from "../models/TriviaModel.js"
 import { triviaService } from "../services/TriviaService.js"
 import { Pop } from "../utils/Pop.js"
 
@@ -6,33 +8,6 @@ export class TriviaController {
     console.log('trivia controller is up!')
     this.receivedTriviaQuestions()
   }
-
-  // getResultsBack() {
-  //   const result = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       const randomNum = Math.round(Math.random() * 10)
-
-  //       if (randomNum > 5) {
-  //         resolve(`randomNum was ${randomNum}`)
-  //       }
-
-  //       else {
-  //         reject(`randomNum was ${randomNum}`)
-  //       }
-  //     }, 4000)
-  //   })
-  // }
-
-
-  // async questionsPromise() {
-
-  //   try {
-  //     const questions = await this.getResultsBack()
-  //     console.log('questions', questions);
-  //   } catch (error) {
-  //     console.error('promise was rejected')
-  //   }
-  // }
 
 
   async receivedTriviaQuestions() {
@@ -45,4 +20,13 @@ export class TriviaController {
     }
     console.log('getting trivia questions')
   }
+
+  drawTriviaQuestions() {
+    const triviaModels = AppState.triviaModels
+    let questionsCardContent = ''
+    triviaModels.forEach(triviaModels => questionsCardContent += triviaModels.card)
+    const questionsCardElem = document.getElementById('questionsCard')
+    questionsCardElem.innerHTML = questionsCardContent
+  }
+
 }

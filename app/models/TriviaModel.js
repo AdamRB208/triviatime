@@ -8,24 +8,25 @@ export class TriviaModel {
     this.incorrect_answers = data.incorrect_answers
   }
 
+
+
+  get card() {
+    return `
+    <div class="col-md-4 card">
+          <span class="level rounded">difficulty</span>
+          <span class="group rounded">category</span>
+          <div></div>
+          <div class="quiz rounded">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quibusdam error
+            soluta blanditiis quis modi veniam doloribus itaque nisi pariatur.</div>
+          <button class="rounded">correct answer</button>
+          <button class="rounded">incorrect answer</button>
+          <button class="rounded">incorrect answer</button>
+          <button class="rounded">incorrect answer</button>
+        </div>
+        `
+  }
+
+
+
 }
 
-
-
-// let exampleData = {
-
-//   "response_code": 0,
-//   "results": [
-//     {
-//       "type": "multiple",
-//       "difficulty": "medium",
-//       "category": "General Knowledge",
-//       "question": "What was the destination of the missing flight MH370?",
-//       "correct_answer": "Beijing",
-//       "incorrect_answers": [
-//         "Kuala Lumpur",
-//         "Singapore",
-//         "Tokyo"
-//       ]
-//     },
-// }
