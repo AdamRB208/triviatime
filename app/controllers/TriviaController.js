@@ -7,6 +7,7 @@ export class TriviaController {
   constructor() {
     console.log('trivia controller is up!')
     this.receivedTriviaQuestions()
+    AppState.on('triviaModels', this.drawTriviaQuestions)
   }
 
 
@@ -27,6 +28,7 @@ export class TriviaController {
     triviaModels.forEach(triviaModels => questionsCardContent += triviaModels.card)
     const questionsCardElem = document.getElementById('questionsCard')
     questionsCardElem.innerHTML = questionsCardContent
+    console.log('questions drawn')
   }
 
 }

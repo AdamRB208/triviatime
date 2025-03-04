@@ -9,24 +9,25 @@ export class TriviaModel {
   }
 
 
-
   get card() {
     return `
-    <div class="col-md-4 card">
-          <span class="level rounded">difficulty</span>
-          <span class="group rounded">category</span>
+    <div class="col-md-3 card m-3">
+          <span class="level rounded">${this.difficulty}</span>
+          <span class="group rounded">${this.category}</span>
           <div></div>
-          <div class="quiz rounded">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quibusdam error
-            soluta blanditiis quis modi veniam doloribus itaque nisi pariatur.</div>
-          <button class="rounded">correct answer</button>
-          <button class="rounded">incorrect answer</button>
-          <button class="rounded">incorrect answer</button>
-          <button class="rounded">incorrect answer</button>
+          <div class="quiz rounded">${this.question}</div>
+          <button class="rounded">${this.correct_answer}</button>
+          <button class="rounded">${this.incorrect_answers[0]}</button>
+          <button class="rounded">${this.incorrect_answers[1]}</button>
+          <button class="rounded">${this.incorrect_answers[2]}</button>
         </div>
         `
   }
 
-
-
 }
 
+
+// let incorrect_answers = ''
+//     for (let i = 0; i < this.incorrect_answers.length; i++) {
+//       incorrect_answers += `<button class="rounded">${this.incorrect_answers[i]}</button>`;
+//     }
